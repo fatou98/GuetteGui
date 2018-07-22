@@ -354,21 +354,21 @@ nav.shrink .navbar-toggle {
 
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item:nth-child(1) .item {
-    background: url('../images/1.jpg');
-    background-size: cover;
+    background: url('../images/1.png');
+    background-size: 100% 100%;
     background-position: bottom;
 }
 
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item:nth-child(2) .item {
-    background: url('../images/2.jpg');
-    background-size: cover;
+    background: url('../images/2.png');
+    background-size: 100% 100%;
 }
 
 .owl-carousel .owl-wrapper,
 .owl-carousel .owl-item:nth-child(3) .item {
-    background: url('../images/3.jpg');
-    background-size: cover;
+    background: url('../images/3.png');
+    background-size: 100% 100%;
 }
 
 .owl-theme .owl-controls .owl-buttons div {
@@ -406,7 +406,7 @@ nav.shrink .navbar-toggle {
 ==================================================*/
 
 .about-bg {
-    background: url('../images/About-C-bg.jpg');
+    background: url('../images/about.png');
     background-repeat: no-repeat;
     background-size: 85%;
     background-position-x: 15%;

@@ -182,22 +182,38 @@ class Bete
     {
         $this->race = $race;
         return $this;
+    }/**
+     * Add image
+     *
+     * @param \App\Entity\Image $image
+     *
+     * @return Mouton
+     */
+    public function addImage(\App\Entity\Image $image)
+    {
+        $this->images[] = $image;
+
+        return $this;
     }
+
     /**
-     * Get the value of images
-     */ 
+     * Remove image
+     *
+     * @param \App\Entity\Image $image
+     */
+    public function removeImage(\App\Entity\Image $image)
+    {
+        $this->images->removeElement($image);
+    }
+
+    /**
+     * Get images
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
     public function getImages()
     {
         return $this->images;
     }
-    /**
-     * Set the value of images
-     *
-     * @return  self
-     */ 
-    public function setImages($images)
-    {
-        $this->images = $images;
-        return $this;
-    }
+
 }
