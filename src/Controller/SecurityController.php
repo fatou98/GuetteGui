@@ -112,7 +112,6 @@ class SecurityController extends Controller
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-        //
         $form = $this->get('form.factory')
                 ->createNamedBuilder(null)
                 ->add('_username', null, ['label' => 'Email'])
@@ -121,11 +120,11 @@ class SecurityController extends Controller
                 ->getForm();
         return $this->render('security/login.html.twig', [
                     'mainNavLogin' => true, 'title' => 'Connexion',
-                    //
                     'form' => $form->createView(),
                     'last_username' => $lastUsername,
                     'error' => $error,
         ]);
     }
+
 }
 
