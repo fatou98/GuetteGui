@@ -27,6 +27,24 @@ class AccueilController extends Controller
             'moutons'=>$moutons
         ]);
     }
+    /**
+     * @Route("/guettegui", name="guettegui")
+     */
+    public function guettegui(BeteRepository $beterepostory,RaceRepository $racerepo)
+    {
+        $moutons =$beterepostory->findBy(array('etat'=>0));
+        foreach($moutons as $values){
+            foreach($values->getImages() as $image){
+                $image->setImage(base64_encode(stream_get_contents($image->getImage())));
+            }
+        }
+        $races =$racerepo->findAll();
+
+        return $this->render('accueil/guettegui.html.twig', [
+            'races'=>$races,
+            'moutons'=>$moutons
+        ]);
+    }
      /**
      * @Route("/ListeBete", name="ListeBete")
      */
@@ -50,6 +68,9 @@ class AccueilController extends Controller
             foreach($values->getImages() as $image){
                 $image->setImage(base64_encode(stream_get_contents($image->getImage())));
             }
+        }
+        if(isset($_POST['Reserver'])){
+            return $this->redirectToRoute('client', array('id' => $id));
         }
         return $this->render('accueil/detail.html.twig', [
                 'mouton'=>$mouton       

@@ -1,20 +1,132 @@
-{% extends 'base.html.twig' %}
+{% extends 'layoutclient.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+ {% block content %}
+        <div class="row">
+        
+  {% block flash %}
+         <div class="row">
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/ClientController.php'|file_link(0) }}">src/Controller/ClientController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/client/index.html.twig'|file_link(0) }}">templates/client/index.html.twig</a></code></li>
-    </ul>
+            {% for flash_message in app.session.flashbag.get('success') %}
+            <div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <i class="fa fa-check pr10"></i>
+                    {{ flash_message }}
 </div>
-{% endblock %}
+                
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('info') %}
+                <div class="container alert alert-info" role="alert">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <i class="fa fa-check pr10"></i>
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('warning') %}
+                <div class="container alert alert-warning" role="alert">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <i class="fa fa-check pr10"></i>
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            {% for flash_message in app.session.flashbag.get('danger') %}
+                <div class="container alert alert-danger" role="alert">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <i class="fa fa-check pr10"></i>
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+            </div>
+
+        {% endblock %}
+
+       {% if vue == true %}
+
+       <!-- Dashboard Tiles -->
+        <div class="row mb10" >
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-alert light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-comments-o"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>523</b>
+                </h2>
+                <h5 class="text-muted">Comments</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-info light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-twitter"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>348</b>
+                </h2>
+                <h5 class="text-muted">Tweets</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-danger light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>267</b>
+                </h2>
+                <h5 class="text-muted">Reach</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-warning light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>714</b>
+                </h2>
+                <h5 class="text-muted">Comments</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+ {% if vue == false %}
+ 
+ <div class="row panel panel-widget draft-widget">
+  <div class="panel-heading">
+    <span class="panel-icon">
+      <i class="fa fa-pencil"></i>
+    </span>
+    <span class="panel-title">Validation commande</span>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+
+  </div>
+  <div class="panel-body p20">
+  <h3>Bienvenue {{client.nomcomplet}}</h3>
+ <h4>
+ {% for mouton in mouton %}
+ Vous avez commander le mouton {{mouton.nomcomplet }} au prix de {{mouton.prix}}FCFA</h4>
+
+ {% endfor %}
+  </div>
+  <div class="panel-footer text-right">
+  <form method="POST">
+      <input class="btn btn-primary btn-sm ph15" type="submit" name="Valider" value="Valider">
+      <input class="btn btn-danger btn-sm ph15" type="submit" name="annuler" value="Annuler">
+      </form><br>
+
+  </div>
+</div>  
+</div>
+      {% endif %}
+      </div>
+
+
+            {% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'layoutclient.html.twig' %}
+
+ {% block content %}
+ <style>
+.betes{
+    width:60px;
+}
+ </style>
+            <div class="col-md-12">
+              <div class="panel panel-visible" id="spy2">
+                <div class="panel-heading">
+                  <div class="panel-title hidden-xs">
+                    <span class="glyphicon glyphicon-tasks"></span>Mes Commandes Validées</div>
+                </div>
+                <div class="panel-body pn">
+                  <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">
+                    <thead>
+                      <tr>
+                                              <th>Image</th>
+
+                        <th>Nom mouton</th>
+                        <th>Prix</th>
+                        <th>couleur</th>
+                        <th>Race</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for mouton in commande %}
+                     <tr>
+          <td> <img src="data:image/png;base64,{{mouton.bete.images[0].image}}" class="betes" class="img-responsive" alt="Food"  >
+</td>
+
+                        <td>{{mouton.bete.nomcomplet}}</td>
+                        <td>{{mouton.bete.prix}}</td>
+                        <td>{{mouton.bete.couleur}}</td>
+                        <td>{{mouton.bete.race.libelle}}</td>
+               <td>{{mouton.bete.description}}</td>
+                      </tr>
+                    {% endfor %}
+          
+                
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+ {% endblock %}

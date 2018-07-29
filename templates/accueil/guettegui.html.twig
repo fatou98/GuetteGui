@@ -1,0 +1,71 @@
+   {% extends 'base.html.twig' %}
+{% block body %}
+<br><br><br><br>
+<br><br><br><br>
+
+
+        <!--==  7. Afordable Pricing  ==-->
+        <section id="pricing" class="pricing">
+            <div id="w">
+                <div class="pricing-filter">
+                    <div class="pricing-filter-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="section-header">
+                                        <h2 class="pricing-title">Nos Moutons</h2>
+                                        <ul id="filter-list" class="clearfix">
+                                            <li class="filter" data-filter="all">Tout</li>
+                                            <li class="filter" data-filter=".Bali-Bali">Bali Bali</li>
+                                            <li class="filter" data-filter=".Ladoum">Ladoum</li>
+                                            <li class="filter" data-filter=".Toulaber">Toulaber</li>
+                                            <li class="filter" data-filter=".Azawat">Azawat</li>
+                                        </ul><!-- @end #filter-list -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">  
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul id="menu-pricing" class="menu-price">
+                            <style>
+                            .betes{
+                                height:200px;
+                            }
+                            </style>
+                            {% for mouton in moutons %}
+                                
+                                <li class="item {{mouton.race.libelle}}">
+
+                                    <a href="/Details-Betes/{{mouton.id}}">
+                                        <img src="data:image/png;base64,{{mouton.images[0].image}}" class="betes" class="img-responsive" alt="Food" >
+                                        <div class="menu-desc text-center">
+                                            <span>
+                                                <h3>{{mouton.nomcomplet}}</h3>
+                                                        <strong style="font-size:60px;">+</strong>
+                                            </span>
+                                        </div>
+                                    </a>
+ 
+                                    <h2 class="white">{{mouton.prix}} F CFA</h2>
+                               </li>
+                            {% endfor %}
+
+                                 
+                            </ul>
+
+                            <!-- <div class="text-center">
+                                    <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                            </div> -->
+
+                        </div>   
+                    </div>
+                </div>
+
+            </div> 
+        </section>
+{% endblock %}

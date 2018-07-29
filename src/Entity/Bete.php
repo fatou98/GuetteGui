@@ -131,7 +131,7 @@ class Bete
         $this->poids = $poids;
         return $this;
     }
-    public function getEtat(): ?boolean
+    public function getEtat()
     {
         return $this->etat;
     }

@@ -67,7 +67,7 @@ class User implements AdvancedUserInterface, \Serializable {
     /**
      * @ORM\Column(name="roles", type="array")
      */
-    private $roles = array();
+    private $roles;
     public function __construct() {
         $this->isActive = true;
         // may not be needed, see section on salt below

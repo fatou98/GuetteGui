@@ -19,7 +19,7 @@ class Commande
     private $client;
     
     /**
-    * @ORM\ManyToMany(targetEntity="App\Entity\Bete")
+    * @ORM\ManyToOne(targetEntity="App\Entity\Bete")
     * @ORM\JoinColumn(nullable=false)
     */
     private $bete;

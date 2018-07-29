@@ -4,7 +4,7 @@
 <head>
   <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
-  <title>AdminDesigns - A Responsive HTML5 Admin UI Framework</title>
+  <title>Darall'Net</title>
   <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
   <meta name="description" content="AdminDesigns - A Responsive HTML5 Admin UI Framework">
   <meta name="author" content="AdminDesigns">
@@ -19,11 +19,18 @@
   <!-- Theme CSS -->
   <link rel="stylesheet" type="text/css" href="{{asset('assets/skin/default_skin/css/theme.css')}}">
 
+  <!-- Datatables CSS -->
+  <link rel="stylesheet" type="text/css" href="vendor/plugins/datatables/media/css/dataTables.bootstrap.css">
+
+  <!-- Datatables Addons CSS -->
+  <link rel="stylesheet" type="text/css" href="vendor/plugins/datatables/media/css/dataTables.plugins.css">
+
+
   <!-- Admin Forms CSS -->
   <link rel="stylesheet" type="text/css" href="{{asset('assets/admin-tools/admin-forms/css/admin-forms.min.css')}}">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}">
+  <link rel="shortcut icon" href="{{asset('images/log1.png')}}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -209,7 +216,7 @@
     <header class="navbar navbar-fixed-top navbar-shadow">
       <div class="navbar-branding">
         <a class="navbar-brand" href="dashboard.html">
-          <b>Admin</b>Designs
+          <b>Daraal'</b>Net
         </a>
         <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
       </div>
@@ -758,7 +765,7 @@
         <li class="dropdown menu-merge">
           <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
           	<img src="{{asset('assets/img/avatars/1.jpg')}}" alt="avatar" class="mw30 br64">
-          	<span class="hidden-xs pl15"> Michael .R </span>
+          	<span class="hidden-xs pl15">{{client.nomcomplet}} </span>
             <span class="caret caret-tp hidden-xs"></span>
           </a>
           <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
@@ -847,7 +854,7 @@
                 <div class="media-links">
                    <a href="#" class="sidebar-menu-toggle">User Menu -</a> <a href="/logout">Deconnexion</a>
                 </div>
-                <div class="media-author">Michael Richards</div>
+                <div class="media-author">{{client.nomcomplet}}</div>
               </div>
             </div>
           </div>
@@ -911,698 +918,34 @@
               
             </a>
           </li>
+            <li>
+            <a href="/accueil">
+              <span class="fa fa-home"></span>
+              <span class="sidebar-title">Accueil</span>
+              
+            </a>
+          </li>
           <li>
             <a href="#">
               <span class="glyphicon glyphicon-book"></span>
               <span class="sidebar-title">Guette-gui</span>
             </a>
           </li>
-          <li class="active">
-            <a href="#">
-              <span class="glyphicon glyphicon-home"></span>
-              <span class="sidebar-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="sidebar-label pt15">Exclusive Tools</li>
+          
+          <li class="sidebar-label pt15">Commandes</li>
           <li>
-            <a class="accordion-toggle" href="#">
+            <a class="accordion-toggle" href="/commandes-validees/client">
               <span class="fa fa-columns"></span>
-              <span class="sidebar-title">Layout Templates</span>
-              <span class="caret"></span>
+              <span class="sidebar-title">Mes commandes validées</span>
             </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa fa-arrows-h"></span>
-                  Sidebars
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_sidebar-left-static.html">
-                      Left Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-fixed.html">
-                      Left Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-widgets.html">
-                      Left Widgets </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-minified.html">
-                      Left Minified </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-left-light.html">
-                      Left White </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-static.html">
-                      Right Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-fixed.html">
-                      Right Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_sidebar-right-menu.html">
-                      Right w/Menu </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-arrows-v"></span>
-                  Navbar
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_navbar-static.html">
-                      Navbar Static </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-fixed.html">
-                      Navbar Fixed </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-menus.html">
-                      Navbar Menus </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-contextual.html">
-                      Contextual Example </a>
-                  </li>
-                  <li>
-                    <a href="layout_navbar-search-alt.html">
-                      Search Alt Style </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-hand-o-up"></span>
-                  Topbar
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_topbar.html">
-                      Default Style </a>
-                  </li> 
-                  <li>
-                    <a href="layout_topbar-menu.html">
-                      Default w/Menu </a>
-                  </li>  
-                  <li>
-                    <a href="layout_topbar-alt.html">
-                      Alternate Style </a>
-                  </li>  
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-arrows-v"></span>
-                  Content Body
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_content-blank.html">
-                      Blank Starter </a>
-                  </li>
-                  <li>
-                    <a href="layout_content-fixed.html">
-                      Fixed Window </a>
-                  </li>
-                  <li>
-                    <a href="layout_content-heading.html">
-                      Content Heading </a>
-                  </li>
-                  <li>
-                    <a href="layout_content-tabs.html">
-                      Content Tabs </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-pause"></span>
-                  Content Trays
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_tray-left.html">
-                      Tray Left Static </a>
-                  </li> 
-                  <li>
-                    <a href="layout_tray-left-fixed.html">
-                      Tray Left Fixed </a>
-                  </li> 
-                  <li>
-                    <a href="layout_tray-right.html">
-                      Tray Right Static </a>
-                  </li> 
-                  <li>
-                    <a href="layout_tray-right-fixed.html">
-                      Tray Right Fixed </a>
-                  </li> 
-                  <li>
-                    <a href="layout_tray-both.html">
-                      Left + Right Static </a>
-                  </li> 
-                  <li>
-                    <a href="layout_tray-both-fixed.html">
-                      Left + Right Fixed </a>
-                  </li> 
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-plus-square-o"></span>
-                  Boxed Layout
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_boxed.html">
-                      Default </a>
-                  </li>
-                  <li>
-                    <a href="layout_boxed-horizontal.html">
-                      Horizontal Menu </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-arrow-circle-o-up"></span>
-                  Horizontal Menu
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="layout_horizontal-sm.html">
-                      Small Size</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-md.html">
-                      Medium Size</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-lg.html">
-                      Large Size</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-light.html">
-                      Light Skin</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-topbar.html">
-                      With Topbar</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-topbar-alt.html">
-                      With Alt Topbar</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-collapsed.html">
-                      Collapsed onLoad</a>
-                  </li>
-                  <li>
-                    <a href="layout_horizontal-boxed.html">
-                      In Boxed Layout</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            
           </li>
           <li>
-            <a class="accordion-toggle" href="#">
+            <a class="accordion-toggle" href="/commandes-encours/client">
               <span class="glyphicon glyphicon-fire"></span>
-              <span class="sidebar-title">Admin Plugins</span>
-              <span class="caret"></span>
+              <span class="sidebar-title">Mes commandes en cours</span>
             </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a href="admin_plugins-panels.html">
-                  <span class="glyphicon glyphicon-book"></span> Admin Panels </a>
-              </li>
-              <li>
-                <a href="admin_plugins-modals.html">
-                  <span class="glyphicon glyphicon-modal-window"></span> Admin Modals </a>
-              </li>
-              <li>
-                <a href="admin_plugins-dock.html">
-                  <span class="glyphicon glyphicon-equalizer"></span> Admin Dock </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-check"></span>
-              <span class="sidebar-title">Admin Forms</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a href="admin_forms-elements.html">
-                  <span class="glyphicon glyphicon-shopping-cart"></span> Admin Elements </a>
-              </li>
-              <li>
-                <a href="admin_forms-widgets.html">
-                  <span class="glyphicon glyphicon-calendar"></span> Admin Widgets </a>
-              </li>
-              <li>
-                <a href="admin_forms-layouts.html">
-                  <span class="fa fa-desktop"></span> Admin Layouts </a>
-              </li>
-              <li>
-                <a href="admin_forms-wizard.html">
-                  <span class="fa fa-clipboard"></span> Admin Wizard </a>
-              </li>
-              <li>
-                <a href="admin_forms-validation.html">
-                  <span class="glyphicon glyphicon-check"></span> Admin Validation </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="sidebar-label pt20">Systems</li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="fa fa-diamond"></span>
-              <span class="sidebar-title">Widget Packages</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a href="widgets_tile.html">
-                  <span class="fa fa-cube"></span> Tile Widgets</a>
-              </li>
-              <li>
-                <a href="widgets_panel.html">
-                  <span class="fa fa-desktop"></span> Panel Widgets </a>
-              </li>
-              <li>
-                <a href="widgets_scroller.html">
-                  <span class="fa fa-columns"></span> Scroller Widgets </a>
-              </li>
-              <li>
-                <a href="widgets_data.html">
-                  <span class="fa fa-dot-circle-o"></span> Admin Widgets </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-shopping-cart"></span>
-              <span class="sidebar-title">Ecommerce</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li class="active">
-                <a href="ecommerce_dashboard.html">
-                  <span class="glyphicon glyphicon-shopping-cart"></span> Dashboard
-                  <span class="label label-xs bg-primary">New</span>
-                </a>
-              </li>
-              <li>
-                <a href="ecommerce_products.html">
-                  <span class="glyphicon glyphicon-tags"></span> Products </a>
-              </li>
-              <li>
-                <a href="ecommerce_orders.html">
-                  <span class="fa fa-money"></span> Orders </a>
-              </li>
-              <li>
-                <a href="ecommerce_customers.html">
-                  <span class="fa fa-users"></span> Customers </a>
-              </li>
-              <li>
-                <a href="ecommerce_settings.html">
-                  <span class="fa fa-gears"></span> Store Settings </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="email_templates.html">
-              <span class="fa fa-envelope-o"></span>
-              <span class="sidebar-title">Email Templates</span>
-            </a>
-          </li>
-
-          <!-- sidebar resources -->
-          <li class="sidebar-label pt20">Elements</li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-bell"></span>
-              <span class="sidebar-title">UI Elements</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a href="ui_alerts.html">
-                  <span class="fa fa-warning"></span> Alerts </a>
-              </li>
-              <li>
-                <a href="ui_animations.html">
-                  <span class="fa fa-spinner"></span> Animations </a>
-              </li>
-              <li>
-                <a href="ui_buttons.html">
-                  <span class="fa fa-plus-square-o"></span> Buttons </a>
-              </li>
-              <li>
-                <a href="ui_typography.html">
-                  <span class="fa fa-text-width"></span> Typography </a>
-              </li>
-              <li>
-                <a href="ui_portlets.html">
-                  <span class="fa fa-archive"></span> Portlets </a>
-              </li>
-              <li>
-                <a href="ui_progress-bars.html">
-                  <span class="fa fa-bars"></span> Progress Bars </a>
-              </li>
-              <li>
-                <a href="ui_tabs.html">
-                  <span class="fa fa-toggle-off"></span> Tabs </a>
-              </li>
-              <li>
-                <a href="ui_icons.html">
-                  <span class="fa fa-hand-o-right"></span> Icons </a>
-              </li>
-              <li>
-                <a href="ui_grid.html">
-                  <span class="fa fa-th-large"></span> Grid </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-hdd"></span>
-              <span class="sidebar-title">Form Elements</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a href="form_inputs.html">
-                  <span class="fa fa-magic"></span> Basic Inputs </a>
-              </li>
-              <li>
-                <a href="form_plugins.html">
-                  <span class="fa fa-bell-o"></span> Plugin Inputs
-                  <span class="label label-xs bg-primary">New</span>
-                </a>
-              </li>
-              <li>
-                <a href="form_editors.html">
-                  <span class="fa fa-clipboard"></span> Editors </a>
-              </li>
-              <li>
-                <a href="form_treeview.html">
-                  <span class="fa fa-tree"></span> Treeview </a>
-              </li>
-              <li>
-                <a href="form_nestable.html">
-                  <span class="fa fa-tasks"></span> Nestable </a>
-              </li>
-              <li>
-                <a href="form_image-tools.html">
-                  <span class="fa fa-cloud-upload"></span> Image Tools
-                  <span class="label label-xs bg-primary">New</span>
-                </a>
-              </li>
-              <li>
-                <a href="form_uploaders.html">
-                  <span class="fa fa-cloud-upload"></span> Uploaders </a>
-              </li>
-              <li>
-                <a href="form_notifications.html">
-                  <span class="fa fa-bell-o"></span> Notifications </a>
-              </li>
-              <li>
-                <a href="form_content-sliders.html">
-                  <span class="fa fa-exchange"></span> Content Sliders </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-tower"></span>
-              <span class="sidebar-title">Plugins</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="glyphicon glyphicon-globe"></span> Maps
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="maps_advanced.html">Admin Maps</a>
-                  </li>
-                  <li>
-                    <a href="maps_basic.html">Basic Maps</a>
-                  </li>
-                  <li>
-                    <a href="maps_vector.html">Vector Maps</a>
-                  </li>
-                  <li>
-                    <a href="maps_full.html">Full Map</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-area-chart"></span> Charts
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="charts_highcharts.html">Highcharts</a>
-                  </li>
-                  <li>
-                    <a href="charts_d3.html">D3 Charts</a>
-                  </li>
-                  <li>
-                    <a href="charts_flot.html">Flot Charts</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-table"></span> Tables
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="tables_basic.html"> Basic Tables</a>
-                  </li>
-                  <li>
-                    <a href="tables_datatables.html"> DataTables </a>
-                  </li>
-                  <li>
-                    <a href="tables_datatables-editor.html"> Editable Tables </a>
-                  </li>
-                  <li>
-                    <a href="tables_footable.html"> FooTables </a>
-                  </li>
-                  <li>
-                    <a href="tables_pricing.html"> Pricing Tables </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-flask"></span> Misc
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="misc_tour.html"> Site Tour</a>
-                  </li>
-                  <li>
-                    <a href="misc_timeout.html"> Session Timeout</a>
-                  </li>
-                  <li>
-                    <a href="misc_nprogress.html"> Page Progress Loader </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="accordion-toggle" href="#">
-              <span class="glyphicon glyphicon-duplicate"></span>
-              <span class="sidebar-title">Pages</span>
-              <span class="caret"></span>
-            </a>
-            <ul class="nav sub-nav">
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-gears"></span> Utility
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="landing-page/landing1/index.html" target="_blank"> Landing Page </a>
-                  </li>
-                  <li>
-                    <a href="pages_confirmation.html" target="_blank"> Confirmation
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_login.html" target="_blank"> Login </a>
-                  </li>
-                  <li>
-                    <a href="pages_login(alt).html" target="_blank"> Login Alt
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_register.html" target="_blank"> Register </a>
-                  </li>
-                  <li>
-                    <a href="pages_register(alt).html" target="_blank"> Register Alt
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_screenlock.html" target="_blank"> Screenlock </a>
-                  </li>
-                  <li>
-                    <a href="pages_screenlock(alt).html" target="_blank"> Screenlock Alt
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_forgotpw.html" target="_blank"> Forgot Password </a>
-                  </li>
-                  <li>
-                    <a href="pages_forgotpw(alt).html" target="_blank"> Forgot Pass Alt
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_coming-soon.html" target="_blank"> Coming Soon
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_404.html"> 404 Error </a>
-                  </li>
-                  <li>
-                    <a href="pages_500.html"> 500 Error </a>
-                  </li>
-                  <li>
-                    <a href="pages_404(alt).html"> 404 Error Alt </a>
-                  </li>
-                  <li>
-                    <a href="pages_500(alt).html"> 500 Error Alt </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="accordion-toggle" href="#">
-                  <span class="fa fa-desktop"></span> Basic
-                  <span class="caret"></span>
-                </a>
-                <ul class="nav sub-nav">
-                  <li>
-                    <a href="pages_search-results.html">Search Results
-                      <span class="label label-xs bg-primary">New</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="pages_profile.html"> Profile </a>
-                  </li>
-                  <li>
-                    <a href="pages_timeline.html"> Timeline Split </a>
-                  </li>
-                  <li>
-                    <a href="pages_timeline-single.html"> Timeline Single </a>
-                  </li>
-                  <li>
-                    <a href="pages_faq.html"> FAQ Page </a>
-                  </li>
-                  <li>
-                    <a href="pages_calendar.html"> Calendar </a>
-                  </li>
-                  <li>
-                    <a href="pages_messages.html"> Messages </a>
-                  </li>
-                  <li>
-                    <a href="pages_messages(alt).html"> Messages Alt </a>
-                  </li>
-                  <li>
-                    <a href="pages_gallery.html"> Gallery </a>
-                  </li>
-                  <li>
-                    <a href="pages_invoice.html"> Printable Invoice </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <!-- sidebar bullets -->
-          <li class="sidebar-label pt20">Projects</li>
-          <li class="sidebar-proj">
-            <a href="#projectOne">
-              <span class="fa fa-dot-circle-o text-primary"></span>
-              <span class="sidebar-title">Website Redesign</span>
-            </a>
-          </li>
-          <li class="sidebar-proj">
-            <a href="#projectTwo">
-              <span class="fa fa-dot-circle-o text-info"></span>
-              <span class="sidebar-title">Ecommerce Panel</span>
-            </a>
-          </li>
-          <li class="sidebar-proj">
-            <a href="#projectTwo">
-              <span class="fa fa-dot-circle-o text-danger"></span>
-              <span class="sidebar-title">Adobe Mockup</span>
-            </a>
-          </li>
-          <li class="sidebar-proj">
-            <a href="#projectThree">
-              <span class="fa fa-dot-circle-o text-warning"></span>
-              <span class="sidebar-title">SSD Upgrades</span>
-            </a>
-          </li>
-
-          <!-- sidebar progress bars -->
-          <li class="sidebar-label pt25 pb10">User Stats</li>
-          <li class="sidebar-stat">
-            <a href="#projectOne" class="fs11">
-              <span class="fa fa-inbox text-info"></span>
-              <span class="sidebar-title text-muted">Email Storage</span>
-              <span class="pull-right mr20 text-muted">35%</span>
-              <div class="progress progress-bar-xs mh20 mb10">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 35%">
-                  <span class="sr-only">35% Complete</span>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="sidebar-stat">
-            <a href="#projectOne" class="fs11">
-              <span class="fa fa-dropbox text-warning"></span>
-              <span class="sidebar-title text-muted">Bandwidth</span>
-              <span class="pull-right mr20 text-muted">58%</span>
-              <div class="progress progress-bar-xs mh20">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 58%">
-                  <span class="sr-only">58% Complete</span>
-                </div>
-              </div>
-            </a>
+           
           </li>
         </ul>
         <!-- End: Sidebar Menu -->
@@ -1672,7 +1015,7 @@
         <div class="topbar-left">
           <ol class="breadcrumb">
             <li class="crumb-active">
-              <a href="dashboard.html">Dashboard</a>
+              <a href="#">Dashboard</a>
             </li>
             <li class="crumb-icon">
               <a href="dashboard.html">
@@ -1708,6 +1051,8 @@
 
       <!-- Begin: Content -->
       <section id="content" class="table-layout animated fadeIn">
+      {% block content %}
+      {% endblock %}
       </section>
   <!-- BEGIN: PAGE SCRIPTS -->
 </body>
@@ -1724,6 +1069,16 @@
 
   <!-- Bootstrap Tabdrop Plugin -->
   <script src="{{asset('vendor/plugins/tabdrop/bootstrap-tabdrop.js')}}"></script>
+
+
+  <!-- Datatables -->
+  <script src="vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
+
+  <!-- Datatables Tabletools addon -->
+  <script src="vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+
+  <!-- Datatables ColReorder addon -->
+  <script src="vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
 
   <!-- FullCalendar Plugin + moment Dependency -->
   <script src="{{asset('vendor/plugins/fullcalendar/lib/moment.min.js')}}"></script>
@@ -2036,6 +1391,276 @@
         runJvectorMap();
       }
     }
+ // Init DataTables
+    $('#datatable').dataTable({
+      "sDom": 't<"dt-panelfooter clearfix"ip>',
+      "oTableTools": {
+        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+      }
+    });
+
+    $('#datatable2').dataTable({
+      "aoColumnDefs": [{
+        'bSortable': false,
+        'aTargets': [-1]
+      }],
+      "oLanguage": {
+        "oPaginate": {
+          "sPrevious": "",
+          "sNext": ""
+        }
+      },
+      "iDisplayLength": 5,
+      "aLengthMenu": [
+        [5, 10, 25, 50, -1],
+        [5, 10, 25, 50, "All"]
+      ],
+      "sDom": '<"dt-panelmenu clearfix"lfr>t<"dt-panelfooter clearfix"ip>',
+      "oTableTools": {
+        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+      }
+    });
+
+    $('#datatable3').dataTable({
+      "aoColumnDefs": [{
+        'bSortable': false,
+        'aTargets': [-1]
+      }],
+      "oLanguage": {
+        "oPaginate": {
+          "sPrevious": "",
+          "sNext": ""
+        }
+      },
+      "iDisplayLength": 5,
+      "aLengthMenu": [
+        [5, 10, 25, 50, -1],
+        [5, 10, 25, 50, "All"]
+      ],
+      "sDom": '<"dt-panelmenu clearfix"Tfr>t<"dt-panelfooter clearfix"ip>',
+      "oTableTools": {
+        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+      }
+    });
+
+    $('#datatable4').dataTable({
+      "aoColumnDefs": [{
+        'bSortable': false,
+        'aTargets': [-1]
+      }],
+      "oLanguage": {
+        "oPaginate": {
+          "sPrevious": "",
+          "sNext": ""
+        }
+      },
+      "iDisplayLength": 5,
+      "aLengthMenu": [
+        [5, 10, 25, 50, -1],
+        [5, 10, 25, 50, "All"]
+      ],
+      "sDom": 'T<"panel-menu dt-panelmenu"lfr><"clearfix">tip',
+
+      "oTableTools": {
+        "sSwfPath": "vendor/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
+      }
+    });
+
+    // Multi-Column Filtering
+    $('#datatable5 thead th').each(function() {
+      var title = $('#datatable5 tfoot th').eq($(this).index()).text();
+      $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
+    });
+
+    // DataTable
+    var table5 = $('#datatable5').DataTable({
+      "sDom": 't<"dt-panelfooter clearfix"ip>',
+      "ordering": false
+    });
+
+    // Apply the search
+    table5.columns().eq(0).each(function(colIdx) {
+      $('input', table5.column(colIdx).header()).on('keyup change', function() {
+        table5
+          .column(colIdx)
+          .search(this.value)
+          .draw();
+      });
+    });
+
+    // ABC FILTERING
+    var table6 = $('#datatable6').DataTable({
+      "sDom": 't<"dt-panelfooter clearfix"ip>',
+      "ordering": false
+    });
+
+    var alphabet = $('<div class="dt-abc-filter"/>').append('<span class="abc-label">Search: </span> ');
+    var columnData = table6.column(0).data();
+    var bins = bin(columnData);
+
+    $('<span class="active"/>')
+      .data('letter', '')
+      .data('match-count', columnData.length)
+      .html('None')
+      .appendTo(alphabet);
+
+    for (var i = 0; i < 26; i++) {
+      var letter = String.fromCharCode(65 + i);
+
+      $('<span/>')
+        .data('letter', letter)
+        .data('match-count', bins[letter] || 0)
+        .addClass(!bins[letter] ? 'empty' : '')
+        .html(letter)
+        .appendTo(alphabet);
+    }
+
+    $('#datatable6').parents('.panel').find('.panel-menu').addClass('dark').html(alphabet);
+
+    alphabet.on('click', 'span', function() {
+      alphabet.find('.active').removeClass('active');
+      $(this).addClass('active');
+
+      _alphabetSearch = $(this).data('letter');
+      table6.draw();
+    });
+
+    var info = $('<div class="alphabetInfo"></div>')
+      .appendTo(alphabet);
+
+    var _alphabetSearch = '';
+
+    $.fn.dataTable.ext.search.push(function(settings, searchData) {
+      if (!_alphabetSearch) {
+        return true;
+      }
+      if (searchData[0].charAt(0) === _alphabetSearch) {
+        return true;
+      }
+      return false;
+    });
+
+    function bin(data) {
+      var letter, bins = {};
+      for (var i = 0, ien = data.length; i < ien; i++) {
+        letter = data[i].charAt(0).toUpperCase();
+
+        if (bins[letter]) {
+          bins[letter]++;
+        } else {
+          bins[letter] = 1;
+        }
+      }
+      return bins;
+    }
+
+    // ROW GROUPING
+    var table7 = $('#datatable7').DataTable({
+      "columnDefs": [{
+        "visible": false,
+        "targets": 2
+      }],
+      "order": [
+        [2, 'asc']
+      ],
+      "sDom": 't<"dt-panelfooter clearfix"ip>',
+      "displayLength": 25,
+      "drawCallback": function(settings) {
+        var api = this.api();
+        var rows = api.rows({
+          page: 'current'
+        }).nodes();
+        var last = null;
+
+        api.column(2, {
+          page: 'current'
+        }).data().each(function(group, i) {
+          if (last !== group) {
+            $(rows).eq(i).before(
+              '<tr class="row-label ' + group.replace(/ /g, '').toLowerCase() + '"><td colspan="5">' + group + '</td></tr>'
+            );
+            last = group;
+          }
+        });
+      }
+    });
+
+    // Order by the grouping
+    $('#datatable7 tbody').on('click', 'tr.row-label', function() {
+      var currentOrder = table7.order()[0];
+      if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+        table7.order([2, 'desc']).draw();
+      } else {
+        table7.order([2, 'asc']).draw();
+      }
+    });
+
+    $('#datatable8').DataTable({
+      "sDom": 'Rt<"dt-panelfooter clearfix"ip>',
+    });
+
+		// COLLAPSIBLE ROWS
+		function format ( d ) {
+	    // `d` is the original data object for the row
+	    return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
+        '<tr>'+
+          '<td class="fw600 pr10">Full name:</td>'+
+          '<td>'+d.name+'</td>'+
+        '</tr>'+
+        '<tr>'+
+          '<td class="fw600 pr10">Extension:</td>'+
+          '<td>'+d.extn+'</td>'+
+        '</tr>'+
+        '<tr>'+
+          '<td class="fw600 pr10">Extra info:</td>'+
+          '<td>And any further details here (images etc)...</td>'+
+        '</tr>'+
+      '</table>';
+		}
+		 
+    var table = $('#datatable9').DataTable({
+      "sDom": 'Rt<"dt-panelfooter clearfix"ip>',
+      "ajax": "vendor/plugins/datatables/examples/data_sources/objects.txt",
+      "columns": [
+        {
+          "className":      'details-control',
+          "orderable":      false,
+          "data":           null,
+          "defaultContent": ''
+        },
+        { "data": "name" },
+        { "data": "position" },
+        { "data": "office" },
+        { "data": "salary" }
+      ],
+      "order": [[1, 'asc']]
+    });
+     
+    // Add event listener for opening and closing details
+    $('#datatable9 tbody').on('click', 'td.details-control', function () {
+      var tr = $(this).closest('tr');
+      var row = table.row( tr );
+
+      if ( row.child.isShown() ) {
+        // This row is already open - close it
+        row.child.hide();
+        tr.removeClass('shown');
+      }
+      else {
+        // Open this row
+        row.child( format(row.data()) ).show();
+        tr.addClass('shown');
+      }
+    });
+
+
+    // MISC DATATABLE HELPER FUNCTIONS
+
+    // Add Placeholder text to datatables filter bar
+    $('.dataTables_filter input').attr("placeholder", "Enter Terms...");
+
+
+  });
 
   });
   </script>
