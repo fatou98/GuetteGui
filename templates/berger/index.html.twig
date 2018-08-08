@@ -1,20 +1,59 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello {{ controller_name }}!{% endblock %}
-
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/BergerController.php'|file_link(0) }}">src/Controller/BergerController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/berger/index.html.twig'|file_link(0) }}">templates/berger/index.html.twig</a></code></li>
-    </ul>
-</div>
+{% extends 'layoutberger.html.twig' %}
+{% block content %}
+<!-- Dashboard Tiles -->
+        <div class="row mb10" >
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-alert light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-comments-o"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>523</b>
+                </h2>
+                <h5 class="text-muted">Comments</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-info light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-twitter"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>348</b>
+                </h2>
+                <h5 class="text-muted">Tweets</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-danger light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>267</b>
+                </h2>
+                <h5 class="text-muted">Reach</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="panel bg-warning light of-h mb10">
+              <div class="pn pl20 p5">
+                <div class="icon-bg">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <h2 class="mt15 lh15">
+                  <b>714</b>
+                </h2>
+                <h5 class="text-muted">Comments</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
 {% endblock %}

@@ -10,6 +10,8 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Form\UserType;
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+
 class SecurityController extends Controller
 {
     /**
@@ -70,7 +72,9 @@ class SecurityController extends Controller
             $entityManager->flush();
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
-            $this->redirectToRoute('client');
+            $this->redirectToRoute('client',array(
+                'id'=>'compte'
+            ));
 
             $this->addFlash('success', 'Votre compte à bien été enregistré.');
             //return $this->redirectToRoute('login');
@@ -114,10 +118,10 @@ class SecurityController extends Controller
         $lastUsername = $authenticationUtils->getLastUsername();
         $form = $this->get('form.factory')
                 ->createNamedBuilder(null)
-                ->add('_username', null, ['label' => 'Email'])
-                ->add('_password', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Mot de passe'])
-                ->add('ok', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Ok', 'attr' => ['class' => 'btn-success btn-block']])
-                ->getForm();
+                ->add('_username',EmailType::class, ['label' => 'Email','attr'=>['class'=>'col-md-8 gui-input','placeholder'=>'Entrer votre email','style'=>'margin-bottom:20px;']])
+                ->add('_password', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Mot de passe','attr'=>['class'=>'col-md-6 gui-input','style'=>'margin-bottom:20px;','placeholder'=>'Entrer votre password']])
+                ->add('ok', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label'=>'Connexion', 'attr'=>['class'=>'button btn-success mr10 pull-right','style'=>'margin-bottom:20px;']])
+                ->getForm();    
         return $this->render('security/login.html.twig', [
                     'mainNavLogin' => true, 'title' => 'Connexion',
                     'form' => $form->createView(),

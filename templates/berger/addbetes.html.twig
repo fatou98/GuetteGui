@@ -1,0 +1,170 @@
+{% extends 'layoutberger.html.twig' %}
+
+{% block content %}
+    <!-- Begin: Content -->
+    <section id="content" class="table-layout animated fadeIn">
+
+        <form method="post" enctype="multipart/form-data">
+            <!-- create new order panel -->
+            <div class="panel mb25 mt5">
+                <div class="panel-heading">
+                    <span class="panel-title hidden-xs">
+                        Ajouter une bete</span>
+                </div>
+                <div class="panel-body p20 pb12">
+                    <div class="tab-content pn br-n admin-form">
+                        <div id="tab1_1" class="tab-pane active">
+                            {% block flash %}
+                                {% for flash_message in app.session.flashbag.get('success') %}
+                                    <div class="container alert alert-success" role="alert">
+                                        {{ flash_message }}
+                                    </div>
+                                {% endfor %}
+                                {% for flash_message in app.session.flashbag.get('info') %}
+                                    <div class="container alert alert-info" role="alert">
+                                        {{ flash_message }}
+                                    </div>
+                                {% endfor %}
+                                {% for flash_message in app.session.flashbag.get('warning') %}
+                                    <div class="container alert alert-warning" role="alert">
+                                        {{ flash_message }}
+                                    </div>
+                                {% endfor %}
+                                {% for flash_message in app.session.flashbag.get('danger') %}
+                                    <div class="container alert alert-danger" role="alert">
+                                        {{ flash_message }}
+                                    </div>
+                                {% endfor %}
+                            {% endblock %}
+
+                            <div class="section row mbn">
+                                <div class="col-lg-9 pl15">
+                                    <div class="section row mb15">
+                                        <div class="col-xs-6">
+                                            <label for="name1" class="field prepend-icon">
+                                                <input type="text" name="nomcomplet" id="nomcomplet" class="event-name gui-input br-light light" placeholder="Entrez le nom complet">
+
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="name2" class="field prepend-icon">
+                                                <input type="text" name="age" id="age" class="event-name gui-input br-light light" placeholder="Entrez son age">
+
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="section row mb15">
+                                        <div class="col-xs-6">
+                                            <label for="password" class="field prepend-icon">
+                                                <input type="text" name="couleur" id="couleur" class="event-name gui-input br-light light" placeholder="Entrez la couleur">
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="password2" class="field prepend-icon">
+                                                <input type="number" name="prix" id="prix" class="event-name gui-input br-light light" placeholder="Entrez le prix">
+
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="section row mb15">
+
+                                        <div class="col-xs-6">
+                                            <label for="email" class="field prepend-icon">
+                                                <input type="text" name="gabari" id="gabari" class="event-name gui-input br-light bg-light" placeholder="Entrez le gabari">
+                                            </label>
+                                        </div>
+                                        <div class="section row mb15">
+
+                                            <div class="col-xs-6">
+                                                <label for="email" class="field prepend-icon">
+                                                    <input type="text" name="taille" id="taille" class="event-name gui-input br-light bg-light" placeholder="Entrez la taille">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="email" class="field prepend-icon">
+                                                <input type="text" name="poids" id="poids" class="event-name gui-input br-light bg-light" placeholder="Entrez le poids">
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="customer-group" class="field select">
+                                                <select id="customer-group" name="selectrace">
+                                                    <option value="0" selected="selected">Race</option>
+                                                    {% for race in races %}
+                                                        <option value="{{race.id}}">{{race.libelle}}</option>
+
+                                                    {% endfor %}
+                                                </select>
+                                                <i class="arrow double"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="section row mb15">
+
+                                        <div class="col-xs-6">
+                                            <label for="customer-group" class="field select">
+                                                <select id="customer-group" name="selectbergerie">
+                                                    <option value="0" selected="selected">Bergerie</option>
+                                                    {% for bergerie in bergeries %}
+                                                        <option value="{{bergerie.id}}">{{bergerie.libelle}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                                <i class="arrow double"></i>
+                                            </label>
+                                        </div>
+                                         <div class="col-xs-6">
+                                    <label>Image</label>
+            <input type="file" name="imagestable" value="">
+</div>
+                                    </div>
+                                       
+                                </div>
+                                <div class="section row mb15">
+                                    <div class="col-md-12">
+                                        <div class="section">
+                                            <label class="field prepend-icon">
+                                                <textarea class="gui-textarea" id="comment" name="description" placeholder="Entrer la description du mouton"></textarea>
+                                                <label for="comment" class="field-icon">
+                                                    <i class="fa fa-comments"></i>
+                                                </label>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-lg-3"> <div class="fileupload fileupload-new admin-form" data-provides="fileupload"> <div class="fileupload-preview thumbnail mb15"> <img data-src="holder.js/100%x147" alt="holder"> </div> <span class="button btn-system btn-file btn-block ph5"> <span class="fileupload-new">Choisir</span> <span class="fileupload-exists">Changer</span> <input type="file" name="fileToUpload" value="Selectionnez une image" > </span> </div> </div>-->
+
+                            <div class="section row mbn">
+
+                                <div class="col-sm-12">
+                                    <p class="text-right">
+                                        <input class="btn btn-success" type="submit" name="submit" value="Enregistrer"/>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+
+                        {# <fieldset>
+                        <legend> Ajouter des images </legend>
+                            <div class="col-xs-12 col-sm-8 pl30">
+                            <div class="tray-bin pl10 mb10" style="min-height: 250px;">
+                                <form method="post" class="dropzone dropzone-sm" id="dropZone">
+                                    <div class="fallback">
+                                        <input name="file" type="file" multiple="multiple" />
+                                    </div>
+                                    <div class="col-sm-12">
+                                    <p class="text-right">
+                                        <input class="btn btn-success" type="submit" name="submit" value="Enregistrer"/>
+                                    </p>
+                                </div>
+                                </form>
+                            </div>
+                            </div>
+                        </fieldset>
+ #}
+                    </section>
+                    <!-- End: Content -->
+
+                {% endblock %}
